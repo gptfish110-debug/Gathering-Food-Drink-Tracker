@@ -1,0 +1,232 @@
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.detail-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-hero {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.detail-title {
+    margin-bottom: 0;
+    color: var(--color-primary);
+}
+
+.detail-meta {
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.detail-description {
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.add-item-section {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.add-item-section h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.add-item-form {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.item-type-select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-main);
+    padding: 0 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+.add-item-input {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    padding: 0.6rem 1rem;
+    color: var(--color-text-main);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.add-item-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.items-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.column-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.25rem;
+    color: var(--color-text-main);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+}
+
+.count-badge {
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.empty-subtext {
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Item Card */
+.item-card {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-left: 3px solid transparent;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.item-card:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-left-color: var(--color-primary);
+}
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.delete-item-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all var(--transition-fast);
+}
+
+.item-card:hover .delete-item-btn {
+    opacity: 1;
+}
+
+.delete-item-btn:hover {
+    color: var(--color-danger);
+}
+
+.item-actions {
+    margin-top: var(--spacing-sm);
+}
+
+.claim-btn {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.claim-input-group {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.claim-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    padding: 0.3rem 0.5rem;
+    color: var(--color-text-main);
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.claimed-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-success);
+}
+
+.unclaim-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.unclaim-btn:hover {
+    color: var(--color-danger);
+}
